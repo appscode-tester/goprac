@@ -6,4 +6,5 @@ jobs:
       #!/bin/bash
       go get -u github.com/ashiquzzaman33/goprac
       pushd $GOPATH/src/github.com/ashiquzzaman33/goprac
-      go test ./pkg/...
+      go test -v ./pkg/...
+      popd
