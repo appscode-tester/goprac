@@ -1,0 +1,9 @@
+jobs:
+  - name: test
+    docker:
+      image: golang:1.8.1
+    script: |
+      #!/bin/bash
+      go get -u github.com/ashiquzzaman33/goprac
+      pushd $GOPATH/src/github.com/ashiquzzaman33/goprac
+      go test ./pkg/...
