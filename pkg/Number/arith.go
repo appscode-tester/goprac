@@ -69,7 +69,7 @@ func (n *Number) Add(num Number) (Number, error) {
 		s := num.v.(int64)
 		return Number{
 			t: Int,
-			v: f+s,
+			v: f-s,
 		}, nil
 	case Doub:
 		f := n.v.(float64)
