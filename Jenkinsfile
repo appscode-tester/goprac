@@ -1,4 +1,4 @@
-pipeline {
+
   parallel 'docker-test' :{
     node ("master") {
       stage ("Docker Build") {
@@ -52,4 +52,4 @@ pipeline {
       }
     }
   }
-}
+
