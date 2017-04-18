@@ -1,4 +1,4 @@
-parallel 'docker-test' :{
+parallel docker :{
   node ("master") {
     stage ("Docker Build") {
       docker.image('appscode/golang-agent:1.5').inside {
@@ -15,7 +15,8 @@ parallel 'docker-test' :{
       }
     }
   }
-}, "direct-test" :{
+},
+direct :{
   node {
     stage ("Without Docker Build") {
       checkout scm
