@@ -3,14 +3,14 @@
     node ("master") {
       stage ("Docker Build") {
         docker.image('appscode/golang-agent:1.5').inside {
-          stage ("Checkout") {
+          steps ("Checkout") {
             checkout scm
           }
-          stage ("Build"){
+          steps ("Build"){
             sh 'go version'
             sh 'go fmt ./cmd/...'
           }
-          stage ("Test and validate"){
+          steps ("Test and validate"){
             sh "go test ./pkg/..."
           }
         }
@@ -20,7 +20,7 @@
     node {
       stage ("Without Docker Build") {
         checkout scm
-        stage("Prepare and Test") {
+        steps("Prepare and Test") {
           sh '''
             cd ../
             sudo chmod -R 777 .
