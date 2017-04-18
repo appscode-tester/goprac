@@ -6,9 +6,10 @@ import (
 )
 
 const (
-	Int string = "int"
+	Int  string = "int"
 	Doub string = "double"
 )
+
 type Number struct {
 	t string
 	v interface{}
@@ -31,7 +32,7 @@ func NewNumber(n interface{}) (Number, error) {
 	case float64:
 		return Number{Doub, n}, nil
 	default:
-		return  Number{}, errors.New("type doesn't currently supported")
+		return Number{}, errors.New("type doesn't currently supported")
 	}
 }
 
@@ -45,14 +46,14 @@ func (n *Number) Mul(num Number) (Number, error) {
 		s := num.v.(int64)
 		return Number{
 			t: Int,
-			v: f*s,
+			v: f * s,
 		}, nil
 	case Doub:
 		f := n.v.(float64)
 		s := num.v.(float64)
 		return Number{
 			t: Doub,
-			v: f*s,
+			v: f * s,
 		}, nil
 	default:
 		return Number{}, fmt.Errorf("type %v doesn't supported", n.t)
@@ -69,14 +70,14 @@ func (n *Number) Add(num Number) (Number, error) {
 		s := num.v.(int64)
 		return Number{
 			t: Int,
-			v: f+s,
+			v: f + s,
 		}, nil
 	case Doub:
 		f := n.v.(float64)
 		s := num.v.(float64)
 		return Number{
 			t: Doub,
-			v: f+s,
+			v: f + s,
 		}, nil
 	default:
 		return Number{}, fmt.Errorf("type %v doesn't supported", n.t)

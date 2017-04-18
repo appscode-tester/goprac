@@ -9,7 +9,7 @@ func TestNumberMul(t *testing.T) {
 	f1, _ := NewNumber(a)
 	f2, _ := NewNumber(b)
 	org, _ := f1.Mul(f2)
-	exp , _ := NewNumber(a*b)
+	exp, _ := NewNumber(a * b)
 	if exp != org {
 		t.Error("expeted: ", exp, " but found: ", org)
 	}
@@ -21,7 +21,7 @@ func TestNumberAdd(t *testing.T) {
 	f1, _ := NewNumber(a)
 	f2, _ := NewNumber(b)
 	org, _ := f1.Add(f2)
-	exp , _ := NewNumber(a+b)
+	exp, _ := NewNumber(a + b)
 	if exp != org {
 		t.Error("expeted: ", exp, " but found: ", org)
 	}
