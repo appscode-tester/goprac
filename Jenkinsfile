@@ -2,14 +2,14 @@ parallel 'docker-test' :{
   node ("master") {
     stage ("Docker Build") {
       docker.image('appscode/golang-agent:1.5').inside {
-        steps ("Checkout") {
+        stage ("Checkout") {
           checkout scm
         }
-        steps ("Build"){
+        stage ("Build"){
           sh 'go version'
           sh 'go fmt ./cmd/...'
         }
-        steps ("Test and validate"){
+        stage ("Test and validate"){
           sh "go test ./pkg/..."
         }
       }
@@ -19,7 +19,7 @@ parallel 'docker-test' :{
   node {
     stage ("Without Docker Build") {
       checkout scm
-      steps("Prepare and Test") {
+      stage("Prepare and Test") {
         sh '''
           cd ../
           sudo chmod -R 777 .
