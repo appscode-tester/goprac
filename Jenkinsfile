@@ -14,4 +14,3 @@ podTemplate(label: 'gopod', containers: [
         }
       }
     }
-}
