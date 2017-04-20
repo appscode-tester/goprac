@@ -1,5 +1,6 @@
 podTemplate(label: 'mypod', containers: [
     containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'jnlp', image: 'csanchez/jenkins-swarm-slave', args: '${computer.jnlpmac} ${computer.name}')
   ]) {
 
     node ('mypod') {
