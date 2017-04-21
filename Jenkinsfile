@@ -1,6 +1,5 @@
 podTemplate(label: 'mypod', containers: [
-    containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat'),
-    containerTemplate(name: 'jnlp', image: 'csanchez/jenkins-swarm-slave', args: '${computer.jnlpmac} ${computer.name}')
+    containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat')
   ]) {
 
     node ('mypod') {
@@ -14,6 +13,5 @@ podTemplate(label: 'mypod', containers: [
             cd /go/src/github.com/hashicorp/terraform && make core-dev
             """
         }
-
     }
 }
