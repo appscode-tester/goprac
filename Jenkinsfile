@@ -1,9 +1,9 @@
-podTemplate(label: 'mypod', containers: [
+podTemplate(label: 'pod2', containers: [
     containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat')
   ]) {
 
-    node ('mypod') {
+    node ('pod2') {
         stage 'Get a Maven project'
         git 'https://github.com/jenkinsci/kubernetes-plugin.git'
         container('maven') {
