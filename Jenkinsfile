@@ -1,5 +1,5 @@
 podTemplate(label: 'pod2', containers: [
-    containerTemplate(name: 'jnlp', image: 'jenkinsci/jnlp-slave:2.62-alpine', args: '${computer.jnlpmac} ${computer.name}'),
+    containerTemplate(name: 'jnlp', image: 'appscode/jnlp-slave:canary', args: '${computer.jnlpmac} ${computer.name}'),
     containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat')
   ]) {
 
