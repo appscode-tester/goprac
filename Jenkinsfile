@@ -1,9 +1,9 @@
-podTemplate(label: 'pod3', containers: [
-    containerTemplate(name: 'jnlp', image: 'appscode/jnlp-slave:canary', args: '${computer.jnlpmac} ${computer.name}'),
+podTemplate(label: 'pod4', containers: [
+    containerTemplate(name: 'jnlp', image: 'appscode/jnlp-slave:canary', envVars: [containerEnvVar(key: 'JENKINS_CA_CERT', value: 'TEST-CERT')], args: '${computer.jnlpmac} ${computer.name}'),
     containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat')
   ]) {
 
-    node ('pod3') {
+    node ('pod4') {
         stage 'Get a Golang project'
         git url: 'https://github.com/hashicorp/terraform.git'
         container('golang') {
