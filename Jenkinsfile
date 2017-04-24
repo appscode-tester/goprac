@@ -1,4 +1,4 @@
-podTemplate(label: 'mypod', containers: [
+podTemplate( inheritFrom: 'jenkins', label: 'mypod', containers: [
     containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat')
   ]) {
 
