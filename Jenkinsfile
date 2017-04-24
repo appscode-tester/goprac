@@ -1,14 +1,13 @@
-podTemplate( inheritFrom: 'jenkins', label: 'mypod', containers: [
+podTemplate( name: 'gotest', namespace: 'jenkins-automation', inheritFrom: 'jenkins', label: 'gotest', containers: [
     containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat')
   ]) {
-
-    node ('mypod') {
+    node ('gotest') {
         container('golang') {
-            stage 'Build a Go project'
-            pwd
-            sh 'ls -la'
-            sh 'go version'
+            stage ('Build a Go project'){
+              pwd
+              sh 'ls -la'
+              sh 'go version'
+            }
         }
-
     }
 }
