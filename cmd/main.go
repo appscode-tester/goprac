@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println("A little change")
+	t := time.Now()
+	for i:=10; i>0; i-- {
+		fmt.Println("Current time: ", t)
+		time.Sleep(time.Second*20)
+	}
 }

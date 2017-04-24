@@ -4,9 +4,11 @@ podTemplate( name: 'gotest', namespace: 'jenkins-automation', inheritFrom: 'jenk
     node ('gotest') {
         container('golang') {
             stage ('Build a Go project'){
+              checkout scm
               pwd
               sh 'ls -la'
               sh 'go version'
+              sh 'go run cmd/main.go'
             }
         }
     }
