@@ -1,4 +1,4 @@
-node("master") {
+node {
   def PWD = pwd()
   def project_dir = "${PWD}/src/github.com/ashiquzzaman33/goprac"
   def go_version = "1.8.1"
