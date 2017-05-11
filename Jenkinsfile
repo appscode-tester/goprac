@@ -39,11 +39,4 @@ node("master") {
         sh "goprac"
       }
   }
-  post {
-      always {
-          dir("${project_dir}") {
-             deleteDir()
-          }
-      }
-   }
 }
