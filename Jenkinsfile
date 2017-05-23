@@ -14,6 +14,7 @@ node {
         sudo pip install git+https://github.com/ellisonbg/antipackage.git#egg=antipackage &&\
         sudo apt install curl'
   }
+    Should Not Pass
   stage("go setup") {
       try {
         sh "go version"
