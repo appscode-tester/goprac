@@ -15,7 +15,7 @@ type Number struct {
 	v interface{}
 }
 
-func NewNumber(n interface{}) (Number, error) {
+func NewNumber(nx interface{}) (Number, error) {
 	switch n.(type) {
 	case int:
 		return Number{Int, int64(n.(int))}, nil
