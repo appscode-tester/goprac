@@ -14,7 +14,6 @@ node {
         sudo pip install git+https://github.com/ellisonbg/antipackage.git#egg=antipackage &&\
         sudo apt install curl'
   }
-  Another update :D
   stage("go setup") {
       try {
         sh "go version"
