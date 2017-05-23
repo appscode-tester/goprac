@@ -24,7 +24,6 @@ node {
       }
 
   }
-  an error
   stage("checkout") {
       dir("${project_dir}") {
          checkout scm
